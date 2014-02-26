@@ -7,7 +7,10 @@
   <body ng-controller="MyController">
     <script>
       var app = angular.module("myapp", ["firebase"]);
-      function MyController($scope, $firebase) { }
+      function MyController($scope, $firebase) {
+        var ref = new Firebase("https://k7ltqx50lsg.firebaseio-demo.com/");
+        $scope.messages = $firebase(ref);
+      }
     </script>
   </body>
 </html>
