@@ -5,6 +5,9 @@
     <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>  
   </head>
   <body ng-controller="MyController">
+    <div id="messagesDiv">
+      <div ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</div>
+    </div>
     <script>
       var app = angular.module("myapp", ["firebase"]);
       function MyController($scope, $firebase) {
